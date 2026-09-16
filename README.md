@@ -6,9 +6,20 @@ The CLI reads article full texts and writes validated JSON documents. Runs are
 configured with a TOML file (command-line flags and environment variables
 override it).
 
+## Setup
+
+Create a `uv`-managed virtual environment and install the dependencies:
+
+```bash
+uv venv .venv --python 3.12
+uv pip install --python .venv/bin/python -r requirements.txt
+```
+
+## Run
+
 ```bash
 cp lit2mol.toml.example lit2mol.toml   # edit base_url, model, focus, paths
-python -m lit2mol.extract --config lit2mol.toml
+.venv/bin/python -m lit2mol.extract --config lit2mol.toml
 ```
 
 `lit2mol.toml`:
