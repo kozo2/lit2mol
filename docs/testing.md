@@ -1,10 +1,11 @@
 # Reproducing the test results
 
 The test suite validates the Pydantic models in `lit2mol/schema.py`, the remote
-vLLM client in `lit2mol/vllm.py`, and the extraction CLI in
-`lit2mol/extract.py`. The network-facing client is exercised with a mocked
-OpenAI client, so no GPU or vLLM server is required. This page lists the exact
-steps and expected output needed to reproduce a green run from a clean checkout.
+vLLM client in `lit2mol/vllm.py`, the TOML configuration layer in
+`lit2mol/config.py`, and the extraction CLI in `lit2mol/extract.py`. The
+network-facing client is exercised with a mocked OpenAI client, so no GPU or
+vLLM server is required. This page lists the exact steps and expected output
+needed to reproduce a green run from a clean checkout.
 
 ## Recorded result
 
@@ -12,14 +13,15 @@ Run performed on a clean checkout at the repository root:
 
 ```
 $ .venv/bin/pytest -q
-........................................................                 [100%]
-56 passed in 0.15s
+........................................................................ [ 96%]
+...                                                                      [100%]
+75 passed in 0.14s
 ```
 
 | Item | Value |
 | --- | --- |
-| Tests collected | 56 |
-| Result | 56 passed, 0 failed, 0 skipped |
+| Tests collected | 75 |
+| Result | 75 passed, 0 failed, 0 skipped |
 | Python | 3.12.3 |
 | pytest | 9.1.1 |
 | pydantic | 2.13.5 |
@@ -95,6 +97,7 @@ uv pip install --python .venv/bin/python \
 .venv/bin/pytest -q tests/test_schema.py             # schema models
 .venv/bin/pytest -q tests/test_vllm.py               # vLLM client
 .venv/bin/pytest -q tests/test_extract.py            # extraction CLI
+.venv/bin/pytest -q tests/test_config.py             # TOML config layer
 .venv/bin/pytest -q -k "complex"                     # only complex tests
 .venv/bin/pytest -q -k "round_trip or json_schema"   # name-based selection
 .venv/bin/pytest -q -x                               # stop at first failure
@@ -123,7 +126,12 @@ loading from environment variables — all against a fake OpenAI client.
 `tests/test_extract.py` covers directory expansion/deduplication, id and
 `SourceDocument` derivation, concurrent `run_batch` output writing, ordering,
 limits and error capture, and the CLI exit codes (0 success, 1 partial failure,
-2 no inputs) with a stub extractor.
+2 no inputs) with a stub extractor. It also drives `main` from TOML files,
+including auto-discovery, CLI-over-TOML overrides, and invalid-key rejection.
+
+`tests/test_config.py` covers TOML loading, explicit and default discovery, and
+the `CLI > TOML > env > default` precedence for both `VLLMConfig` and
+`RunConfig`.
 
 ## Troubleshooting
 

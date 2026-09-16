@@ -8,6 +8,7 @@ Example::
         --base-url http://gpu-host:8000/v1 \
         --model nvidia/Llama-3.1-8B-Instruct
 
+Options may also come from a TOML file via ``--config`` (or ``./lit2mol.toml``).
 Input is one or more ``.txt`` full-text files (or directories containing them).
 For every file a validated ``MolecularMetadata`` document is written to
 ``<out-dir>/<id>.json``.
@@ -23,11 +24,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, Sequence
 
+from lit2mol.config import build_run_config, discover_config, load_toml_config
 from lit2mol.schema import SourceDocument
 from lit2mol.vllm import ExtractionError, VLLMConfig, VLLMExtractor
 
 PMCID_RE = re.compile(r"^(PMC\d+)$", re.IGNORECASE)
-DEFAULT_OUT_DIR = "outputs"
 DEFAULT_CONCURRENCY = 4
 
 
@@ -120,12 +121,21 @@ def build_parser() -> argparse.ArgumentParser:
         prog="python -m lit2mol.extract",
         description="Extract molecular metadata from full texts using a remote vLLM server.",
     )
-    parser.add_argument("paths", nargs="+", help="Full-text .txt files or directories.")
+    parser.add_argument(
+        "paths",
+        nargs="*",
+        help="Full-text .txt files or directories (may also come from [extraction].paths).",
+    )
+    parser.add_argument(
+        "--config",
+        default=None,
+        help="TOML config file (defaults to ./lit2mol.toml when present).",
+    )
     parser.add_argument("--focus", default=None, help="Molecule/complex to focus the extraction on.")
-    parser.add_argument("--out-dir", default=DEFAULT_OUT_DIR, help="Directory for JSON results.")
-    parser.add_argument("--pattern", default="*.txt", help="Glob used when a path is a directory.")
+    parser.add_argument("--out-dir", default=None, help="Directory for JSON results.")
+    parser.add_argument("--pattern", default=None, help="Glob used when a path is a directory.")
     parser.add_argument("--limit", type=int, default=None, help="Process at most N files.")
-    parser.add_argument("--concurrency", type=int, default=DEFAULT_CONCURRENCY)
+    parser.add_argument("--concurrency", type=int, default=None)
     parser.add_argument("--base-url", default=None, help="vLLM base URL (env VLLM_BASE_URL).")
     parser.add_argument("--api-key", default=None, help="API key (env VLLM_API_KEY).")
     parser.add_argument("--model", default=None, help="Model name (env VLLM_MODEL).")
@@ -147,37 +157,60 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: Optional[Sequence[str]] = None) -> int:
     args = build_parser().parse_args(argv)
 
-    config = VLLMConfig.from_env(
-        base_url=args.base_url,
-        api_key=args.api_key,
-        model=args.model,
-        structured_mode=args.structured_mode,
-        temperature=args.temperature,
-        top_p=args.top_p,
-        max_tokens=args.max_tokens,
-        max_input_chars=args.max_input_chars,
-        timeout=args.timeout,
-        seed=args.seed,
-    )
+    try:
+        config_path = discover_config(args.config)
+        toml_data = load_toml_config(config_path) if config_path else {}
+        run = build_run_config(
+            {
+                "paths": args.paths or None,
+                "focus": args.focus,
+                "out_dir": args.out_dir,
+                "pattern": args.pattern,
+                "limit": args.limit,
+                "concurrency": args.concurrency,
+            },
+            toml_data.get("extraction"),
+        )
+        config = VLLMConfig.from_sources(
+            cli={
+                "base_url": args.base_url,
+                "api_key": args.api_key,
+                "model": args.model,
+                "structured_mode": args.structured_mode,
+                "temperature": args.temperature,
+                "top_p": args.top_p,
+                "max_tokens": args.max_tokens,
+                "max_input_chars": args.max_input_chars,
+                "timeout": args.timeout,
+                "seed": args.seed,
+            },
+            toml=toml_data.get("vllm"),
+        )
+    except (ValueError, FileNotFoundError) as exc:
+        print(f"configuration error: {exc}", file=sys.stderr)
+        return 2
+
     extractor = VLLMExtractor(config)
 
-    files = collect_input_files(args.paths, pattern=args.pattern)
+    files = collect_input_files(run.paths, pattern=run.pattern)
     if not files:
         print("no input files found", file=sys.stderr)
         return 2
 
+    if config_path:
+        print(f"Using config file {config_path}", file=sys.stderr)
     print(
         f"Extracting {len(files)} file(s) with model {config.model!r} "
-        f"at {config.base_url} -> {args.out_dir}",
+        f"at {config.base_url} -> {run.out_dir}",
         file=sys.stderr,
     )
     results = run_batch(
         files,
         extractor,
-        Path(args.out_dir),
-        focus=args.focus,
-        concurrency=args.concurrency,
-        limit=args.limit,
+        Path(run.out_dir),
+        focus=run.focus,
+        concurrency=run.concurrency,
+        limit=run.limit,
     )
 
     failures = [r for r in results if not r.ok]

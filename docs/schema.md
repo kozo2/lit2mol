@@ -21,9 +21,11 @@ structured-output target for an LLM.
 | --- | --- |
 | `lit2mol/schema.py` | Model definitions and reference validation |
 | `lit2mol/vllm.py` | Remote vLLM extraction client (see [extraction.md](extraction.md)) |
+| `lit2mol/config.py` | TOML configuration and precedence (`RunConfig`, `build_run_config`) |
 | `lit2mol/extract.py` | Extraction CLI and batch orchestration |
 | `lit2mol/__init__.py` | Convenience re-exports of all public models |
 | `schema.json` | Generated JSON Schema (`MolecularMetadata.model_json_schema()`) |
+| `lit2mol.toml.example` | Example extraction configuration |
 | `requirements.txt` | Runtime dependencies (`pydantic>=2.7`, `openai>=1.40`) |
 | `tests/` | Pytest suite (see [usage.md](usage.md#11-running-the-tests)) |
 

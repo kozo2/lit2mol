@@ -39,6 +39,13 @@ _EXPORTS = {
         "run_batch",
         "source_for",
     ],
+    "lit2mol.config": [
+        "DEFAULT_CONFIG_FILENAME",
+        "RunConfig",
+        "build_run_config",
+        "discover_config",
+        "load_toml_config",
+    ],
 }
 
 __all__ = sorted(name for names in _EXPORTS.values() for name in names)

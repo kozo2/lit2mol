@@ -1,0 +1,28 @@
+# Example lit2mol configuration.
+#
+# Copy this file to `lit2mol.toml` (auto-discovered in the working directory)
+# or pass it explicitly:
+#
+#   python -m lit2mol.extract --config lit2mol.toml
+#
+# Precedence: command-line arguments > this file > environment variables > defaults.
+
+[vllm]
+base_url = "http://gpu-host:8000/v1"
+api_key = "EMPTY"
+model = "nvidia/Llama-3.1-8B-Instruct"
+structured_mode = "guided_json"   # or "response_format"
+temperature = 0.0
+top_p = 1.0
+max_tokens = 8192
+max_input_chars = 120000
+timeout = 600.0
+# seed = 42
+
+[extraction]
+paths = ["refs/fulltext"]
+focus = "phenylalanyl-tRNA synthetase (PheS/PheT)"
+out_dir = "outputs/phes"
+pattern = "*.txt"
+# limit = 10
+concurrency = 8

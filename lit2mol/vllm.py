@@ -71,18 +71,48 @@ class VLLMConfig(BaseModel):
     seed: Optional[int] = None
 
     @classmethod
+    def from_sources(
+        cls,
+        cli: Optional[dict[str, Any]] = None,
+        toml: Optional[dict[str, Any]] = None,
+    ) -> "VLLMConfig":
+        """Build a config from CLI args, a TOML table, and environment variables.
+
+        Precedence: non-``None`` CLI values, then TOML values, then environment
+        variables (``VLLM_BASE_URL``, ``VLLM_API_KEY``, ``VLLM_MODEL``,
+        ``VLLM_STRUCTURED_MODE``), then field defaults.
+        """
+        cli = {k: v for k, v in (cli or {}).items() if v is not None}
+        toml = dict(toml or {})
+
+        unknown = set(toml) - set(cls.model_fields)
+        if unknown:
+            raise ValueError(f"unknown [vllm] keys: {sorted(unknown)}")
+
+        env = {
+            "base_url": os.environ.get("VLLM_BASE_URL"),
+            "api_key": os.environ.get("VLLM_API_KEY"),
+            "model": os.environ.get("VLLM_MODEL"),
+            "structured_mode": os.environ.get("VLLM_STRUCTURED_MODE"),
+        }
+
+        values: dict[str, Any] = {}
+        for field in cls.model_fields:
+            if field in cli:
+                values[field] = cli[field]
+            elif field in toml:
+                values[field] = toml[field]
+            elif env.get(field) is not None:
+                values[field] = env[field]
+
+        if not values.get("model"):
+            raise ValueError("no model configured; set VLLM_MODEL, [vllm].model, or --model")
+        return cls(**values)
+
+    @classmethod
     def from_env(cls, **overrides: Any) -> "VLLMConfig":
         """Build a config from environment variables with optional overrides."""
-        values: dict[str, Any] = {
-            "base_url": os.environ.get("VLLM_BASE_URL", DEFAULT_BASE_URL),
-            "api_key": os.environ.get("VLLM_API_KEY", DEFAULT_API_KEY),
-            "model": os.environ.get("VLLM_MODEL"),
-            "structured_mode": os.environ.get("VLLM_STRUCTURED_MODE", "guided_json"),
-        }
-        values.update({k: v for k, v in overrides.items() if v is not None})
-        if not values.get("model"):
-            raise ValueError("no model configured; set VLLM_MODEL or pass model=")
-        return cls(**values)
+        return cls.from_sources(cli=overrides)
 
 
 class ExtractionError(RuntimeError):

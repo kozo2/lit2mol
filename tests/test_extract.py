@@ -190,3 +190,141 @@ def test_main_returns_two_when_no_inputs(tmp_path, monkeypatch):
     empty.mkdir()
     code = main([str(empty), "--out-dir", str(tmp_path / "out"), "--model", "m"])
     assert code == 2
+
+
+# --------------------------------------------------------------------------- #
+# CLI main driven by a TOML config file
+# --------------------------------------------------------------------------- #
+
+
+def write_config(tmp_path, text: str) -> Path:
+    path = tmp_path / "lit2mol.toml"
+    path.write_text(text)
+    return path
+
+
+def test_main_uses_toml_config(tmp_path, monkeypatch):
+    src_dir = tmp_path / "fulltext"
+    src_dir.mkdir()
+    (src_dir / "PMC1.txt").write_text("body")
+    config_path = write_config(
+        tmp_path,
+        f"""
+        [extraction]
+        paths = ["{src_dir}"]
+        focus = "PheS"
+        out_dir = "{tmp_path / 'out'}"
+        concurrency = 2
+
+        [vllm]
+        base_url = "http://toml-host:8000/v1"
+        api_key = "secret"
+        model = "toml-model"
+        """,
+    )
+
+    captured = {}
+    stub = StubExtractor()
+
+    def factory(config):
+        captured["config"] = config
+        return stub
+
+    monkeypatch.setattr("lit2mol.extract.VLLMExtractor", factory)
+    code = main(["--config", str(config_path)])
+
+    assert code == 0
+    assert (tmp_path / "out" / "PMC1.json").exists()
+    assert captured["config"].model == "toml-model"
+    assert captured["config"].base_url == "http://toml-host:8000/v1"
+    assert captured["config"].api_key == "secret"
+    assert stub.calls[0][2] == "PheS"
+
+
+def test_main_cli_overrides_toml(tmp_path, monkeypatch):
+    src = tmp_path / "PMC1.txt"
+    src.write_text("body")
+    config_path = write_config(
+        tmp_path,
+        """
+        [extraction]
+        focus = "PheS"
+
+        [vllm]
+        model = "toml-model"
+        """,
+    )
+
+    captured = {}
+    stub = StubExtractor()
+
+    def factory(config):
+        captured["config"] = config
+        return stub
+
+    monkeypatch.setattr("lit2mol.extract.VLLMExtractor", factory)
+    code = main(
+        [
+            str(src),
+            "--config",
+            str(config_path),
+            "--model",
+            "cli-model",
+            "--focus",
+            "PntAB",
+            "--out-dir",
+            str(tmp_path / "out"),
+        ]
+    )
+
+    assert code == 0
+    assert captured["config"].model == "cli-model"
+    assert stub.calls[0][2] == "PntAB"
+
+
+def test_main_auto_discovers_default_config(tmp_path, monkeypatch):
+    src_dir = tmp_path / "fulltext"
+    src_dir.mkdir()
+    (src_dir / "PMC1.txt").write_text("body")
+    write_config(
+        tmp_path,
+        """
+        [extraction]
+        paths = ["fulltext"]
+        out_dir = "out"
+
+        [vllm]
+        model = "auto-model"
+        """,
+    )
+    captured = {}
+
+    def factory(config):
+        captured["config"] = config
+        return StubExtractor()
+
+    monkeypatch.setattr("lit2mol.extract.VLLMExtractor", factory)
+    monkeypatch.chdir(tmp_path)
+    code = main([])
+
+    assert code == 0
+    assert captured["config"].model == "auto-model"
+    assert (tmp_path / "out" / "PMC1.json").exists()
+
+
+def test_main_invalid_toml_key_returns_two(tmp_path, monkeypatch):
+    src = tmp_path / "PMC1.txt"
+    src.write_text("body")
+    config_path = write_config(
+        tmp_path,
+        """
+        [extraction]
+        nope = 1
+
+        [vllm]
+        model = "m"
+        """,
+    )
+    monkeypatch.setattr("lit2mol.extract.VLLMExtractor", lambda config: StubExtractor())
+    code = main([str(src), "--config", str(config_path)])
+    assert code == 2
