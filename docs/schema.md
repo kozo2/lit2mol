@@ -20,10 +20,12 @@ structured-output target for an LLM.
 | Path | Purpose |
 | --- | --- |
 | `lit2mol/schema.py` | Model definitions and reference validation |
+| `lit2mol/vllm.py` | Remote vLLM extraction client (see [extraction.md](extraction.md)) |
+| `lit2mol/extract.py` | Extraction CLI and batch orchestration |
 | `lit2mol/__init__.py` | Convenience re-exports of all public models |
 | `schema.json` | Generated JSON Schema (`MolecularMetadata.model_json_schema()`) |
-| `requirements.txt` | Runtime dependency (`pydantic>=2.7`) |
-| `tests/test_schema.py` | Pytest suite (see [usage.md](usage.md#11-running-the-tests)) |
+| `requirements.txt` | Runtime dependencies (`pydantic>=2.7`, `openai>=1.40`) |
+| `tests/` | Pytest suite (see [usage.md](usage.md#11-running-the-tests)) |
 
 ## Entity graph
 

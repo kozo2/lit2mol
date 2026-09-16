@@ -1,8 +1,10 @@
 # Reproducing the test results
 
-The test suite validates the Pydantic models in `lit2mol/schema.py`. This page
-lists the exact steps and expected output needed to reproduce a green run from a
-clean checkout.
+The test suite validates the Pydantic models in `lit2mol/schema.py`, the remote
+vLLM client in `lit2mol/vllm.py`, and the extraction CLI in
+`lit2mol/extract.py`. The network-facing client is exercised with a mocked
+OpenAI client, so no GPU or vLLM server is required. This page lists the exact
+steps and expected output needed to reproduce a green run from a clean checkout.
 
 ## Recorded result
 
@@ -10,18 +12,19 @@ Run performed on a clean checkout at the repository root:
 
 ```
 $ .venv/bin/pytest -q
-............................                                             [100%]
-28 passed in 0.07s
+........................................................                 [100%]
+56 passed in 0.15s
 ```
 
 | Item | Value |
 | --- | --- |
-| Tests collected | 28 |
-| Result | 28 passed, 0 failed, 0 skipped |
+| Tests collected | 56 |
+| Result | 56 passed, 0 failed, 0 skipped |
 | Python | 3.12.3 |
 | pytest | 9.1.1 |
 | pydantic | 2.13.5 |
 | pydantic-core | 2.46.5 |
+| openai | 3.14.1 |
 | OS | Linux x86_64 |
 
 ## Prerequisites
@@ -65,13 +68,22 @@ recorded run exactly, install this frozen set:
 ```bash
 uv pip install --python .venv/bin/python \
   annotated-types==0.8.0 \
+  anyio==4.15.1 \
+  h11==0.16.0 \
+  httpcore2==2.13.0 \
+  httpx2==2.13.0 \
+  idna==3.19 \
   iniconfig==2.3.0 \
+  jiter==0.17.0 \
+  openai==3.14.1 \
   packaging==26.3 \
   pluggy==1.6.0 \
   pydantic==2.13.5 \
   pydantic-core==2.46.5 \
   pygments==2.21.0 \
   pytest==9.1.1 \
+  sniffio==1.3.1 \
+  truststore==0.10.4 \
   typing-extensions==4.16.0 \
   typing-inspection==0.4.4
 ```
@@ -80,7 +92,9 @@ uv pip install --python .venv/bin/python \
 
 ```bash
 .venv/bin/pytest -v                                   # show each test name
-.venv/bin/pytest -q tests/test_schema.py             # whole module
+.venv/bin/pytest -q tests/test_schema.py             # schema models
+.venv/bin/pytest -q tests/test_vllm.py               # vLLM client
+.venv/bin/pytest -q tests/test_extract.py            # extraction CLI
 .venv/bin/pytest -q -k "complex"                     # only complex tests
 .venv/bin/pytest -q -k "round_trip or json_schema"   # name-based selection
 .venv/bin/pytest -q -x                               # stop at first failure
@@ -101,6 +115,16 @@ uv pip install --python .venv/bin/python \
 - **Schema and package surface** — generated JSON Schema shape, JSON
   serializability, lazy re-exports.
 
+`tests/test_vllm.py` covers prompt building (schema, focus, truncation),
+response parsing (plain/fenced/invalid/schema-mismatch), `guided_json` and
+`response_format` request construction, seed propagation, and `VLLMConfig`
+loading from environment variables — all against a fake OpenAI client.
+
+`tests/test_extract.py` covers directory expansion/deduplication, id and
+`SourceDocument` derivation, concurrent `run_batch` output writing, ordering,
+limits and error capture, and the CLI exit codes (0 success, 1 partial failure,
+2 no inputs) with a stub extractor.
+
 ## Troubleshooting
 
 | Symptom | Cause / fix |
@@ -112,4 +136,4 @@ uv pip install --python .venv/bin/python \
 | Stale `__pycache__` after edits | Remove with `find . -name __pycache__ -type d -exec rm -rf {} +`. |
 
 The environment is throwaway: delete `.venv/` and repeat the repro steps at any
-time (`.venv/` and `__pycache__/` are gitignored).
+time (`.venv/`, `__pycache__/`, and `.pytest_cache/` are gitignored).

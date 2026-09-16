@@ -240,11 +240,10 @@ uv pip install --python .venv/bin/python -r requirements-dev.txt
 .venv/bin/pytest -q
 ```
 
-The suite in `tests/test_schema.py` covers valid construction, serialization
-round-trips, nested complexes, every reference-validation failure mode, field
-constraints, the generated JSON Schema, and the lazy package re-exports. A root
-`conftest.py` puts the repository root on `sys.path` so `lit2mol` is importable
-without installing the package.
+The suite covers the schema models (`tests/test_schema.py`), the remote vLLM
+client (`tests/test_vllm.py`, mocked so no server is needed), and the extraction
+CLI (`tests/test_extract.py`). A root `conftest.py` puts the repository root on
+`sys.path` so `lit2mol` is importable without installing the package.
 
 See [testing.md](testing.md) for the recorded result, frozen dependency versions,
 and step-by-step reproduction instructions.
