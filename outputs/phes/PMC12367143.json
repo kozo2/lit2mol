@@ -1,0 +1,57 @@
+{
+  "source": {
+    "pmcid": "PMC12367143",
+    "title": "An empirical model of aminoacylation kinetics for E. coli class I and II aminoacyl tRNA synthetases",
+    "organism": "Escherichia coli"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheRS_subunit",
+      "name": "PheRS subunit",
+      "synonyms": [
+        "phenylalanyl-tRNA synthetase subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC12367143",
+          "section": "METHODS",
+          "quote": "For the dimeric class II AARS enzymes (serRS, thrRS, proRS, hisRS, aspRS, asnRS, lysRS, alaRS, glyRS and pheRS), as well as the dimeric class I metRS, I use the reaction scheme depicted in Fig 1A and 1B to model the aminoacylation reaction."
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "pheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC12367143",
+          "section": "METHODS",
+          "quote": "For the dimeric class II AARS enzymes (serRS, thrRS, proRS, hisRS, aspRS, asnRS, lysRS, alaRS, glyRS and pheRS), as well as the dimeric class I metRS, I use the reaction scheme depicted in Fig 1A and 1B to model the aminoacylation reaction."
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheRS_subunit",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC12367143",
+              "section": "METHODS",
+              "quote": "For the dimeric class II AARS enzymes (serRS, thrRS, proRS, hisRS, aspRS, asnRS, lysRS, alaRS, glyRS and pheRS), as well as the dimeric class I metRS, I use the reaction scheme depicted in Fig 1A and 1B to model the aminoacylation reaction."
+            }
+          ]
+        }
+      ],
+      "description": "Dimeric class II aminoacyl-tRNA synthetase."
+    }
+  ]
+}

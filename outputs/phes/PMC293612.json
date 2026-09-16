@@ -1,0 +1,102 @@
+{
+  "source": {
+    "pmcid": "PMC293612",
+    "title": "Effects of an insertion mutation in a locus affecting pyridine nucleotide transhydrogenase (pnt::Tn5) on the growth of Escherichia coli.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "pnt",
+      "name": "pnt",
+      "synonyms": [
+        "pyridine nucleotide transhydrogenase locus"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC293612",
+          "section": "Abstract",
+          "quote": "an insertion mutation in a locus affecting pyridine nucleotide transhydrogenase (pnt::Tn5)"
+        }
+      ]
+    },
+    {
+      "id": "pgi",
+      "name": "pgi",
+      "synonyms": [
+        "phosphoglucoisomerase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC293612",
+          "section": "Abstract",
+          "quote": "strains lacking phosphoglucoisomerase"
+        }
+      ]
+    },
+    {
+      "id": "zwf",
+      "name": "zwf",
+      "synonyms": [
+        "glucose 6-phosphate dehydrogenase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC293612",
+          "section": "Abstract",
+          "quote": "glucose 6-phosphate dehydrogenase"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "pnt_transhydrogenase",
+      "name": "pyridine nucleotide transhydrogenase",
+      "synonyms": [
+        "energy-linked transhydrogenase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC293612",
+          "section": "Abstract",
+          "quote": "the energy-linked transhydrogenase is an important source of reduced nicotinamide adenine dinucleotide phosphate for Escherichia coli"
+        }
+      ],
+      "gene_ref": "pnt"
+    },
+    {
+      "id": "pgi_monomer",
+      "name": "phosphoglucoisomerase",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC293612",
+          "section": "Abstract",
+          "quote": "strains lacking phosphoglucoisomerase"
+        }
+      ],
+      "gene_ref": "pgi"
+    },
+    {
+      "id": "zwf_monomer",
+      "name": "glucose 6-phosphate dehydrogenase",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC293612",
+          "section": "Abstract",
+          "quote": "glucose 6-phosphate dehydrogenase"
+        }
+      ],
+      "gene_ref": "zwf"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

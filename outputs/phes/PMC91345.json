@@ -1,0 +1,37 @@
+{
+  "source": {
+    "pmcid": "PMC91345",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pntA",
+      "name": "pntA",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC91345",
+          "section": "Title",
+          "quote": "Expression of the Escherichia coli pntA and pntB Genes, Encoding Nicotinamide Nucleotide Transhydrogenase, in Saccharomyces cerevisiae and Its Effect on Product Formation during Anaerobic Glucose Fermentation"
+        }
+      ]
+    },
+    {
+      "id": "gene_pntB",
+      "name": "pntB",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC91345",
+          "section": "Title",
+          "quote": "Expression of the Escherichia coli pntA and pntB Genes, Encoding Nicotinamide Nucleotide Transhydrogenase, in Saccharomyces cerevisiae and Its Effect on Product Formation during Anaerobic Glucose Fermentation"
+        }
+      ]
+    }
+  ],
+  "monomers": [],
+  "modified_monomers": [],
+  "complexes": []
+}

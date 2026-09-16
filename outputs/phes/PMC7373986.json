@@ -1,0 +1,129 @@
+{
+  "source": {
+    "pmcid": "PMC7373986"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheRS_alpha",
+      "name": "Phenylalanyl-tRNA synthetase α subunit",
+      "synonyms": [
+        "PheS",
+        "PheRS α subunit",
+        "α-subunit"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC7373986",
+          "section": "SUBSTRATE SPECIFICITY AND EDITING",
+          "quote": "in eukaryotes the cytosolic PheRS is a heterotetramer composed of 2 α subunits that harbor the active site and 2 β subunits with editing activity."
+        },
+        {
+          "pmcid": "PMC7373986",
+          "section": "POST-TRANSFER EDITING",
+          "quote": "in the heterotetrameric PheRS the editing domain is located in the β-subunit (Roy et al. 2004) and the catalytic activity is located in the α-subunit (Mosyak et al. 1995; Fishman et al. 2001)."
+        }
+      ]
+    },
+    {
+      "id": "PheRS_beta",
+      "name": "Phenylalanyl-tRNA synthetase β subunit",
+      "synonyms": [
+        "PheT",
+        "PheRS β subunit",
+        "β-subunit"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC7373986",
+          "section": "SUBSTRATE SPECIFICITY AND EDITING",
+          "quote": "in eukaryotes the cytosolic PheRS is a heterotetramer composed of 2 α subunits that harbor the active site and 2 β subunits with editing activity."
+        },
+        {
+          "pmcid": "PMC7373986",
+          "section": "POST-TRANSFER EDITING",
+          "quote": "in the heterotetrameric PheRS the editing domain is located in the β-subunit (Roy et al. 2004) and the catalytic activity is located in the α-subunit (Mosyak et al. 1995; Fishman et al. 2001)."
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "PheRS_cytosolic",
+      "name": "Cytosolic phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS",
+        "heterotetrameric PheRS",
+        "eukaryotic cytosolic PheRS"
+      ],
+      "organism": "Eukaryota",
+      "evidence": [
+        {
+          "pmcid": "PMC7373986",
+          "section": "SUBSTRATE SPECIFICITY AND EDITING",
+          "quote": "in eukaryotes the cytosolic PheRS is a heterotetramer composed of 2 α subunits that harbor the active site and 2 β subunits with editing activity."
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheRS_alpha",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC7373986",
+              "section": "SUBSTRATE SPECIFICITY AND EDITING",
+              "quote": "in eukaryotes the cytosolic PheRS is a heterotetramer composed of 2 α subunits that harbor the active site and 2 β subunits with editing activity."
+            }
+          ]
+        },
+        {
+          "component_ref": "PheRS_beta",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC7373986",
+              "section": "SUBSTRATE SPECIFICITY AND EDITING",
+              "quote": "in eukaryotes the cytosolic PheRS is a heterotetramer composed of 2 α subunits that harbor the active site and 2 β subunits with editing activity."
+            }
+          ]
+        }
+      ],
+      "description": "Heterotetrameric PheRS with catalytic α subunits and editing β subunits."
+    },
+    {
+      "id": "PheRS_mito",
+      "name": "Mitochondrial phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "mtPheRS",
+        "mitochondrial PheRS"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC7373986",
+          "section": "SUBSTRATE SPECIFICITY AND EDITING",
+          "quote": "The mitochondrial counterpart is only composed of the α subunit and lacks editing"
+        },
+        {
+          "pmcid": "PMC7373986",
+          "section": "AMINO ACID RECOGNITION",
+          "quote": "mitochondrial human and yeast PheRS lack this critical residue and rely on a higher specificity for cognate substrate to discriminate against the noncognate"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheRS_alpha",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC7373986",
+              "section": "SUBSTRATE SPECIFICITY AND EDITING",
+              "quote": "The mitochondrial counterpart is only composed of the α subunit and lacks editing"
+            }
+          ]
+        }
+      ],
+      "description": "Mitochondrial PheRS composed only of the α subunit; lacks editing activity."
+    }
+  ]
+}

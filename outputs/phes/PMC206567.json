@@ -1,0 +1,76 @@
+{
+  "source": {
+    "pmcid": "PMC206567",
+    "title": "Identification of the pheS5 mutation, which causes thermosensitivity of Escherichia coli mutant NP37.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pheS",
+      "name": "pheS",
+      "synonyms": [
+        "pheS5"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC206567",
+          "section": "Abstract",
+          "quote": "The pheS5 mutation responsible for the thermosensitive phenylalanyl-tRNA synthetase of the classical Escherichia coli NP37 was cloned by a recombination event and identified by DNA sequence analysis."
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_PheS_alpha",
+      "name": "phenylalanyl-tRNA synthetase alpha subunit",
+      "synonyms": [
+        "PheS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC206567",
+          "section": "Abstract",
+          "quote": "the phenylalanyl-tRNA synthetase alpha subunit"
+        }
+      ],
+      "gene_ref": "gene_pheS"
+    }
+  ],
+  "modified_monomers": [
+    {
+      "id": "modified_PheS_alpha_G98D",
+      "name": "phenylalanyl-tRNA synthetase alpha subunit (Gly98Asp)",
+      "synonyms": [
+        "PheS5"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC206567",
+          "section": "Abstract",
+          "quote": "The resulting amino acid exchange, Gly-98 to Asp-98 in the phenylalanyl-tRNA synthetase alpha subunit"
+        }
+      ],
+      "monomer_ref": "monomer_PheS_alpha",
+      "modifications": [
+        {
+          "modification_type": "other",
+          "residue": "Asp",
+          "position": 98,
+          "description": "Gly-98 to Asp-98 amino acid exchange",
+          "evidence": [
+            {
+              "pmcid": "PMC206567",
+              "section": "Abstract",
+              "quote": "The resulting amino acid exchange, Gly-98 to Asp-98 in the phenylalanyl-tRNA synthetase alpha subunit"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "complexes": []
+}

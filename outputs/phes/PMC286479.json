@@ -1,0 +1,42 @@
+{
+  "source": {
+    "pmcid": "PMC286479",
+    "title": "Presence of the hypermodified nucleotide N6-(delta 2-isopentenyl)-2-methylthioadenosine prevents codon misreading by Escherichia coli phenylalanyl-transfer RNA.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pheRS",
+      "name": "phenylalanine tRNA-synthetase gene",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC286479",
+          "section": "Abstract",
+          "quote": "a bacterial host that carried a defective phenylalanine tRNA-synthetase gene"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_PheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "phenylalanine tRNA-synthetase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC286479",
+          "section": "Abstract",
+          "quote": "a bacterial host that carried a defective phenylalanine tRNA-synthetase gene"
+        }
+      ],
+      "gene_ref": "gene_pheRS"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

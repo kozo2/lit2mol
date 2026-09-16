@@ -1,0 +1,67 @@
+{
+  "source": {
+    "pmcid": "PMC554214",
+    "title": "Functional mutants of phenylalanine transfer RNA from Escherichia coli.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pheS",
+      "name": "pheS",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC554214",
+          "section": "Abstract",
+          "quote": "pheS,T operon"
+        }
+      ]
+    },
+    {
+      "id": "gene_pheT",
+      "name": "pheT",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC554214",
+          "section": "Abstract",
+          "quote": "pheS,T operon"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_PheS",
+      "name": "PheS",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC554214",
+          "section": "Abstract",
+          "quote": "pheS,T operon"
+        }
+      ],
+      "gene_ref": "gene_pheS"
+    },
+    {
+      "id": "monomer_PheT",
+      "name": "PheT",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC554214",
+          "section": "Abstract",
+          "quote": "pheS,T operon"
+        }
+      ],
+      "gene_ref": "gene_pheT"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

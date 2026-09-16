@@ -1,0 +1,72 @@
+{
+  "source": {
+    "pmcid": "PMC321521",
+    "title": "New Class of Bacterial Phenylalanyl-tRNA Synthetase Inhibitors with High Potency and Broad-Spectrum Activity",
+    "organism": "Bacteria"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheRS_Ecoli",
+      "name": "Phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "Phe-RS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC321521",
+          "section": "Abstract",
+          "quote": "The compounds inhibit Phe-RS of Escherichia coli, Haemophilus influenzae, Streptococcus pneumoniae, and Staphylococcus aureus, with 50% inhibitory concentrations in the nanomolar range."
+        }
+      ]
+    },
+    {
+      "id": "PheRS_Hinfluenzae",
+      "name": "Phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "Phe-RS"
+      ],
+      "organism": "Haemophilus influenzae",
+      "evidence": [
+        {
+          "pmcid": "PMC321521",
+          "section": "Abstract",
+          "quote": "The compounds inhibit Phe-RS of Escherichia coli, Haemophilus influenzae, Streptococcus pneumoniae, and Staphylococcus aureus, with 50% inhibitory concentrations in the nanomolar range."
+        }
+      ]
+    },
+    {
+      "id": "PheRS_Spneumoniae",
+      "name": "Phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "Phe-RS"
+      ],
+      "organism": "Streptococcus pneumoniae",
+      "evidence": [
+        {
+          "pmcid": "PMC321521",
+          "section": "Abstract",
+          "quote": "The compounds inhibit Phe-RS of Escherichia coli, Haemophilus influenzae, Streptococcus pneumoniae, and Staphylococcus aureus, with 50% inhibitory concentrations in the nanomolar range."
+        }
+      ]
+    },
+    {
+      "id": "PheRS_Saureus",
+      "name": "Phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "Phe-RS"
+      ],
+      "organism": "Staphylococcus aureus",
+      "evidence": [
+        {
+          "pmcid": "PMC321521",
+          "section": "Abstract",
+          "quote": "The compounds inhibit Phe-RS of Escherichia coli, Haemophilus influenzae, Streptococcus pneumoniae, and Staphylococcus aureus, with 50% inhibitory concentrations in the nanomolar range."
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

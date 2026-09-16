@@ -1,0 +1,100 @@
+{
+  "source": {
+    "pmcid": "PMC218998",
+    "title": "Cloning and expression of the transhydrogenase gene of Escherichia coli.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "pnt",
+      "name": "pnt",
+      "synonyms": [
+        "transhydrogenase gene"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC218998",
+          "section": "Abstract",
+          "quote": "we have isolated three clones bearing the transhydrogenase gene from the Clarke and Carbon colony bank"
+        },
+        {
+          "pmcid": "PMC218998",
+          "section": "Abstract",
+          "quote": "The protein products of plasmids carrying the pnt gene were examined"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "pnt_polypeptide_50k",
+      "name": "50 kDa polypeptide",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC218998",
+          "section": "Abstract",
+          "quote": "Two polypeptides of molecular weights 50,000 and 47,000 were coded by the 3.05-kilobase fragment of pDC11"
+        }
+      ],
+      "gene_ref": "pnt"
+    },
+    {
+      "id": "pnt_polypeptide_47k",
+      "name": "47 kDa polypeptide",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC218998",
+          "section": "Abstract",
+          "quote": "Two polypeptides of molecular weights 50,000 and 47,000 were coded by the 3.05-kilobase fragment of pDC11"
+        }
+      ],
+      "gene_ref": "pnt"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "transhydrogenase",
+      "name": "transhydrogenase",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC218998",
+          "section": "Abstract",
+          "quote": "Both polypeptides were required for expression of transhydrogenase activity"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "pnt_polypeptide_50k",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC218998",
+              "section": "Abstract",
+              "quote": "Both polypeptides were required for expression of transhydrogenase activity"
+            }
+          ]
+        },
+        {
+          "component_ref": "pnt_polypeptide_47k",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC218998",
+              "section": "Abstract",
+              "quote": "Both polypeptides were required for expression of transhydrogenase activity"
+            }
+          ]
+        }
+      ],
+      "description": "Enzyme whose activity requires both polypeptides encoded by the pnt gene."
+    }
+  ]
+}

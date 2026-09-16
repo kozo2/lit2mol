@@ -1,0 +1,43 @@
+{
+  "source": {
+    "pmcid": "PMC323737",
+    "title": "Genetic definition of the translational operator of the threonine-tRNA ligase gene in Escherichia coli.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_thrS",
+      "name": "thrS",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC323737",
+          "section": "Abstract",
+          "quote": "The Escherichia coli gene thrS that codes for threonine-tRNA ligase"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_ThrS",
+      "name": "threonine-tRNA ligase",
+      "synonyms": [
+        "tRNAThr ligase",
+        "threonine-tRNA synthetase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC323737",
+          "section": "Abstract",
+          "quote": "threonine-tRNA ligase (tRNAThr ligase, formerly threonine-tRNA synthetase, EC 6.1.1.3)"
+        }
+      ],
+      "gene_ref": "gene_thrS"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

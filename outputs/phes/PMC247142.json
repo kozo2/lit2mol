@@ -1,0 +1,43 @@
+{
+  "source": {
+    "pmcid": "PMC247142",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pheRS",
+      "name": "phenylalanyl-tRNA synthetase gene",
+      "synonyms": [
+        "phenylalanyl-transfer ribonucleic acid synthetase gene"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC247142",
+          "section": "Abstract",
+          "quote": "Mutants with temperature-sensitive glutamyl-, phenylalanyl-, and valyl-transfer ribonucleic acid synthetases have been obtained, and the genes specifying these enzymes have been mapped by conjugation and transduction."
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_pheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "phenylalanyl-transfer ribonucleic acid synthetase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC247142",
+          "section": "Abstract",
+          "quote": "Mutants with temperature-sensitive glutamyl-, phenylalanyl-, and valyl-transfer ribonucleic acid synthetases have been obtained, and the genes specifying these enzymes have been mapped by conjugation and transduction."
+        }
+      ],
+      "gene_ref": "gene_pheRS"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

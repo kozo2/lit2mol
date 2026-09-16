@@ -1,0 +1,258 @@
+{
+  "source": {
+    "pmcid": "PMC4082710",
+    "title": "G673 could be a novel mutational hot spot for intragenic suppressors of pheS5 lesion in Escherichia coli",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pheS",
+      "name": "pheS",
+      "synonyms": [
+        "FitA"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Introduction",
+          "quote": "The pheS and pheT genes that code for α and β subunits of phenylalanyl-tRNA synthetase define an operon with the direction of transcription being pheS to pheT"
+        },
+        {
+          "pmcid": "PMC4082710",
+          "section": "Introduction",
+          "quote": "both α and β subunits of phenylalanyl-tRNA synthetase also function as Accessory Transcription Factors (FitA and FitB)"
+        }
+      ]
+    },
+    {
+      "id": "gene_pheT",
+      "name": "pheT",
+      "synonyms": [
+        "FitB"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Introduction",
+          "quote": "The pheS and pheT genes that code for α and β subunits of phenylalanyl-tRNA synthetase define an operon with the direction of transcription being pheS to pheT"
+        },
+        {
+          "pmcid": "PMC4082710",
+          "section": "Introduction",
+          "quote": "both α and β subunits of phenylalanyl-tRNA synthetase also function as Accessory Transcription Factors (FitA and FitB)"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_PheS",
+      "name": "PheS",
+      "synonyms": [
+        "phenylalanyl-tRNA synthetase alpha subunit",
+        "α subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Introduction",
+          "quote": "The pheS and pheT genes that code for α and β subunits of phenylalanyl-tRNA synthetase define an operon with the direction of transcription being pheS to pheT"
+        }
+      ],
+      "gene_ref": "gene_pheS"
+    },
+    {
+      "id": "monomer_PheT",
+      "name": "PheT",
+      "synonyms": [
+        "phenylalanyl-tRNA synthetase beta subunit",
+        "β subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Introduction",
+          "quote": "The pheS and pheT genes that code for α and β subunits of phenylalanyl-tRNA synthetase define an operon with the direction of transcription being pheS to pheT"
+        }
+      ],
+      "gene_ref": "gene_pheT"
+    }
+  ],
+  "modified_monomers": [
+    {
+      "id": "mod_PheS5",
+      "name": "PheS5",
+      "synonyms": [
+        "PheSG98D"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Discussion",
+          "quote": "pheS5 mutant NP37 defined by a G293 → A293 transition that is PheSG98D"
+        }
+      ],
+      "monomer_ref": "monomer_PheS",
+      "modifications": [
+        {
+          "modification_type": "other",
+          "residue": "Gly",
+          "position": 98,
+          "description": "Gly98Asp substitution caused by G293→A293 transition (pheS5)",
+          "evidence": [
+            {
+              "pmcid": "PMC4082710",
+              "section": "Discussion",
+              "quote": "pheS5 mutant NP37 defined by a G293 → A293 transition that is PheSG98D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod_PheS19",
+      "name": "PheS19",
+      "synonyms": [
+        "PheS5-PheS19"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Results",
+          "quote": "the base change is G673 → T673 (Ts+ derivative 19), which changed the amino acid from Gly225 to Cys225"
+        }
+      ],
+      "monomer_ref": "monomer_PheS",
+      "modifications": [
+        {
+          "modification_type": "other",
+          "residue": "Gly",
+          "position": 225,
+          "description": "Gly225Cys substitution caused by G673→T673 transversion (pheS19)",
+          "evidence": [
+            {
+              "pmcid": "PMC4082710",
+              "section": "Results",
+              "quote": "the base change is G673 → T673 (Ts+ derivative 19), which changed the amino acid from Gly225 to Cys225"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod_PheS28",
+      "name": "PheS28",
+      "synonyms": [
+        "PheS5-PheS28",
+        "PheS43"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Results",
+          "quote": "G673 → C673; Gly225 → Arg225"
+        }
+      ],
+      "monomer_ref": "monomer_PheS",
+      "modifications": [
+        {
+          "modification_type": "other",
+          "residue": "Gly",
+          "position": 225,
+          "description": "Gly225Arg substitution caused by G673→C673 transversion (pheS28/pheS43)",
+          "evidence": [
+            {
+              "pmcid": "PMC4082710",
+              "section": "Results",
+              "quote": "G673 → C673; Gly225 → Arg225"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod_PheS40",
+      "name": "PheS40",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Results",
+          "quote": "the base position 293 affected in pheS5 namely G293 → A293 got changed to T293 (Ts+ derivative 40) leading to Asp98 to Val98 amino acid change"
+        }
+      ],
+      "monomer_ref": "monomer_PheS",
+      "modifications": [
+        {
+          "modification_type": "other",
+          "residue": "Asp",
+          "position": 98,
+          "description": "Asp98Val substitution caused by A293→T293 (pheS40)",
+          "evidence": [
+            {
+              "pmcid": "PMC4082710",
+              "section": "Results",
+              "quote": "the base position 293 affected in pheS5 namely G293 → A293 got changed to T293 (Ts+ derivative 40) leading to Asp98 to Val98 amino acid change"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "complexes": [
+    {
+      "id": "complex_PheRS",
+      "name": "Phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS",
+        "EcPheRS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC4082710",
+          "section": "Introduction",
+          "quote": "this synthetase functions as a hetero tetramer"
+        },
+        {
+          "pmcid": "PMC4082710",
+          "section": "Results",
+          "quote": "EcPheRS is a tetramer consisting of two α (A and C chains) and two β (B and D chains) subunits."
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "monomer_PheS",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC4082710",
+              "section": "Results",
+              "quote": "EcPheRS is a tetramer consisting of two α (A and C chains) and two β (B and D chains) subunits."
+            }
+          ]
+        },
+        {
+          "component_ref": "monomer_PheT",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC4082710",
+              "section": "Results",
+              "quote": "EcPheRS is a tetramer consisting of two α (A and C chains) and two β (B and D chains) subunits."
+            }
+          ]
+        }
+      ],
+      "description": "Heterotetrameric phenylalanyl-tRNA synthetase (α2β2) composed of two PheS and two PheT subunits."
+    }
+  ]
+}

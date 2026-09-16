@@ -1,0 +1,82 @@
+{
+  "source": {
+    "pmcid": "PMC533057",
+    "title": "Post-transfer editing in vitro and in vivo by the β subunit of phenylalanyl-tRNA synthetase",
+    "organism": "Escherichia coli"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheS",
+      "name": "phenylalanyl-tRNA synthetase α subunit",
+      "synonyms": [
+        "α subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC533057",
+          "section": "Abstract",
+          "quote": "the α subunit"
+        }
+      ]
+    },
+    {
+      "id": "PheT",
+      "name": "phenylalanyl-tRNA synthetase β subunit",
+      "synonyms": [
+        "β subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC533057",
+          "section": "Abstract",
+          "quote": "the β subunit of phenylalanyl-tRNA synthetase"
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "PheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC533057",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheS",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC533057",
+              "section": "Abstract",
+              "quote": "the α subunit"
+            }
+          ]
+        },
+        {
+          "component_ref": "PheT",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC533057",
+              "section": "Abstract",
+              "quote": "the β subunit"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

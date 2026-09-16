@@ -1,0 +1,115 @@
+{
+  "source": {
+    "pmcid": "PMC1218482",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "pntA",
+      "name": "pntA",
+      "synonyms": [
+        "alpha subunit gene"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC1218482",
+          "section": "Abstract",
+          "quote": "This enzyme contains seven cysteines, of which five are located in the alpha subunit and two are in the beta subunit."
+        }
+      ]
+    },
+    {
+      "id": "pntB",
+      "name": "pntB",
+      "synonyms": [
+        "beta subunit gene"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC1218482",
+          "section": "Abstract",
+          "quote": "This enzyme contains seven cysteines, of which five are located in the alpha subunit and two are in the beta subunit."
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "alpha_subunit",
+      "name": "transhydrogenase alpha subunit",
+      "synonyms": [
+        "alpha subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC1218482",
+          "section": "Abstract",
+          "quote": "five are located in the alpha subunit"
+        }
+      ],
+      "gene_ref": "pntA"
+    },
+    {
+      "id": "beta_subunit",
+      "name": "transhydrogenase beta subunit",
+      "synonyms": [
+        "beta subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC1218482",
+          "section": "Abstract",
+          "quote": "two are in the beta subunit"
+        }
+      ],
+      "gene_ref": "pntB"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "transhydrogenase",
+      "name": "nicotinamide nucleotide transhydrogenase",
+      "synonyms": [
+        "transhydrogenase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC1218482",
+          "section": "Abstract",
+          "quote": "Nicotinamide nucleotide transhydrogenase from Escherichia coli was investigated with respect to the roles of its cysteine residues."
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "alpha_subunit",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC1218482",
+              "section": "Abstract",
+              "quote": "five are located in the alpha subunit"
+            }
+          ]
+        },
+        {
+          "component_ref": "beta_subunit",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC1218482",
+              "section": "Abstract",
+              "quote": "two are in the beta subunit"
+            }
+          ]
+        }
+      ],
+      "description": "Membrane-bound proton-pumping transhydrogenase composed of alpha and beta subunits."
+    }
+  ]
+}

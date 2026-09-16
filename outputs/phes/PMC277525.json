@@ -1,0 +1,27 @@
+{
+  "source": {
+    "pmcid": "PMC277525",
+    "title": "Protein and Nucleic Acid Synthesis in Two Mutants of Escherichia coli with Temperature-Sensitive Aminoacyl Ribonucleic Acid Synthetases",
+    "organism": "Escherichia coli"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "phenylalanyl_sRNA_synthetase",
+      "name": "phenylalanyl sRNA synthetase",
+      "synonyms": [
+        "phenylalanyl-tRNA synthetase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC277525",
+          "section": "Abstract",
+          "quote": "IV-4 possesses a temperature-sensitive phenylalanyl sRNA synthetase."
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

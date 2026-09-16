@@ -1,0 +1,25 @@
+{
+  "source": {
+    "pmcid": "PMC4118124",
+    "title": "The Role of a Novel Auxiliary Pocket in Bacterial Phenylalanyl-tRNA Synthetase Druggability"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheRS",
+      "name": "Phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC4118124",
+          "section": "Abstract",
+          "quote": "Phenylalanyl-tRNA synthetase inhibitors have been shown to be efficacious in animal models of infection."
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

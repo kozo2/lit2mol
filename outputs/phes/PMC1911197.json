@@ -1,0 +1,11 @@
+{
+  "source": {
+    "pmcid": "PMC1911197",
+    "title": "A genome-scale metabolic reconstruction for Escherichia coli K-12 MG1655 that accounts for 1260 ORFs and thermodynamic information",
+    "organism": "Escherichia coli K-12 MG1655"
+  },
+  "genes": [],
+  "monomers": [],
+  "modified_monomers": [],
+  "complexes": []
+}

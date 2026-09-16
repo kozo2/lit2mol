@@ -1,0 +1,44 @@
+{
+  "source": {
+    "pmcid": "PMC218105",
+    "title": "Genetic mapping of a mutation affecting pyridine nucleotide transhydrogenase in Escherichia coli.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "pnt",
+      "name": "pnt",
+      "synonyms": [
+        "pnt-1"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC218105",
+          "section": "ABSTRACT",
+          "quote": "A mutation, pnt-1, causing loss of pyridine nucleotide transhydrogenase activity in Escherichia coli, was mapped"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "pnt_monomer",
+      "name": "pyridine nucleotide transhydrogenase",
+      "synonyms": [
+        "transhydrogenase"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC218105",
+          "section": "ABSTRACT",
+          "quote": "loss of pyridine nucleotide transhydrogenase activity in Escherichia coli"
+        }
+      ],
+      "gene_ref": "pnt"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

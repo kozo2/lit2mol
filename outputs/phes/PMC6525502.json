@@ -1,0 +1,77 @@
+{
+  "source": {
+    "pmcid": "PMC6525502",
+    "title": "Oxidation of phenylalanyl-tRNA synthetase positively regulates translational quality control"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheRS_monomer",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC6525502",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [
+    {
+      "id": "PheRS_oxidized",
+      "name": "oxidized phenylalanyl-tRNA synthetase",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pmcid": "PMC6525502",
+          "section": "Title",
+          "quote": "Oxidation of phenylalanyl-tRNA synthetase"
+        }
+      ],
+      "monomer_ref": "PheRS_monomer",
+      "modifications": [
+        {
+          "modification_type": "oxidation",
+          "evidence": [
+            {
+              "pmcid": "PMC6525502",
+              "section": "Title",
+              "quote": "Oxidation of phenylalanyl-tRNA synthetase"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "complexes": [
+    {
+      "id": "PheRS_complex",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pmcid": "PMC6525502",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheRS_monomer",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC6525502",
+              "section": "Abstract",
+              "quote": "phenylalanyl-tRNA synthetase"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

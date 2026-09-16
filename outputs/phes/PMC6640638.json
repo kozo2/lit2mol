@@ -1,0 +1,115 @@
+{
+  "source": {
+    "pmcid": "PMC6640638",
+    "title": "In Vivo Biosynthesis of a β-Amino Acid-Containing Protein",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "pheS",
+      "name": "pheS",
+      "synonyms": [
+        "PheS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC6640638",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ]
+    },
+    {
+      "id": "pheT",
+      "name": "pheT",
+      "synonyms": [
+        "PheT"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC6640638",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "PheS",
+      "name": "phenylalanyl-tRNA synthetase alpha subunit",
+      "synonyms": [
+        "PheS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC6640638",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ],
+      "gene_ref": "pheS"
+    },
+    {
+      "id": "PheT",
+      "name": "phenylalanyl-tRNA synthetase beta subunit",
+      "synonyms": [
+        "PheT"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC6640638",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ],
+      "gene_ref": "pheT"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "PheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC6640638",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheS",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC6640638",
+              "section": "Abstract",
+              "quote": "phenylalanyl-tRNA synthetase"
+            }
+          ]
+        },
+        {
+          "component_ref": "PheT",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC6640638",
+              "section": "Abstract",
+              "quote": "phenylalanyl-tRNA synthetase"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "source": {
+    "pmcid": "PMC9529548",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pntA",
+      "name": "pntA",
+      "synonyms": [
+        "pntA"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC9529548",
+          "section": "Results",
+          "quote": "displaying two distinct bands of PntA (α) and PntB (β) subunits corresponding to their expected molecular weight of 57.1 kDa and 48.7 kDa"
+        }
+      ]
+    },
+    {
+      "id": "gene_pntB",
+      "name": "pntB",
+      "synonyms": [
+        "pntB"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC9529548",
+          "section": "Results",
+          "quote": "displaying two distinct bands of PntA (α) and PntB (β) subunits corresponding to their expected molecular weight of 57.1 kDa and 48.7 kDa"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_PntA",
+      "name": "PntA",
+      "synonyms": [
+        "α subunit",
+        "domain I subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC9529548",
+          "section": "Introduction",
+          "quote": "The α subunit contains domain I with the NAD(H) binding site as well as the first four transmembrane helices (TM1–TM4) of the membrane domain II."
+        }
+      ],
+      "gene_ref": "gene_pntA"
+    },
+    {
+      "id": "monomer_PntB",
+      "name": "PntB",
+      "synonyms": [
+        "β subunit",
+        "domain III subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC9529548",
+          "section": "Introduction",
+          "quote": "The β subunit contains the additional 9 transmembrane helices of domain II (TM6–TM14; total 13 transmembrane helices) plus domain III with the NADP(H) binding site."
+        }
+      ],
+      "gene_ref": "gene_pntB"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "complex_transhydrogenase",
+      "name": "E. coli nicotinamide nucleotide transhydrogenase",
+      "synonyms": [
+        "transhydrogenase",
+        "PntAB"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC9529548",
+          "section": "Introduction",
+          "quote": "The membrane-bound transhydrogenase from different species has a conserved structure consisting of two identical protomers in which each protomer has three domains"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "monomer_PntA",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC9529548",
+              "section": "Introduction",
+              "quote": "The membrane-bound transhydrogenase from different species has a conserved structure consisting of two identical protomers in which each protomer has three domains"
+            }
+          ]
+        },
+        {
+          "component_ref": "monomer_PntB",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC9529548",
+              "section": "Introduction",
+              "quote": "Each protomer of the E. coli enzyme consists of two subunits."
+            }
+          ]
+        }
+      ],
+      "description": "Membrane-bound transhydrogenase homodimer consisting of two identical protomers, each composed of the PntA (α) and PntB (β) subunits."
+    }
+  ]
+}

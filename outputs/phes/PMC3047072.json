@@ -1,0 +1,121 @@
+{
+  "source": {
+    "pmcid": "PMC3047072",
+    "title": "Idiosyncrasy and identity in the prokaryotic phe-system: Crystal structure of E. coli phenylalanyl-tRNA synthetase complexed with phenylalanine and AMP",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pheS",
+      "name": "pheS",
+      "synonyms": [
+        "PheS",
+        "phenylalanyl-tRNA synthetase alpha subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC3047072",
+          "section": "Abstract",
+          "quote": "EcPheRS is a (αβ)2 heterotetramer"
+        }
+      ]
+    },
+    {
+      "id": "gene_pheT",
+      "name": "pheT",
+      "synonyms": [
+        "PheT",
+        "phenylalanyl-tRNA synthetase beta subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC3047072",
+          "section": "Abstract",
+          "quote": "EcPheRS is a (αβ)2 heterotetramer"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_pheS",
+      "name": "PheRS alpha subunit",
+      "synonyms": [
+        "PheS",
+        "α-subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC3047072",
+          "section": "Abstract",
+          "quote": "Three of them: the N-terminus, A1 and A2 belong to the α-subunit"
+        }
+      ],
+      "gene_ref": "gene_pheS"
+    },
+    {
+      "id": "monomer_pheT",
+      "name": "PheRS beta subunit",
+      "synonyms": [
+        "PheT",
+        "β subunit"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC3047072",
+          "section": "Abstract",
+          "quote": "B1-B8 domains to the β subunit"
+        }
+      ],
+      "gene_ref": "gene_pheT"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "complex_EcPheRS",
+      "name": "Phenylalanyl-tRNA synthetase from E. coli",
+      "synonyms": [
+        "EcPheRS",
+        "PheRS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC3047072",
+          "section": "Abstract",
+          "quote": "EcPheRS is a (αβ)2 heterotetramer"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "monomer_pheS",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC3047072",
+              "section": "Abstract",
+              "quote": "EcPheRS is a (αβ)2 heterotetramer"
+            }
+          ]
+        },
+        {
+          "component_ref": "monomer_pheT",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC3047072",
+              "section": "Abstract",
+              "quote": "EcPheRS is a (αβ)2 heterotetramer"
+            }
+          ]
+        }
+      ],
+      "description": "class II aminoacyl-tRNA synthetase complexed with phenylalanine and AMP"
+    }
+  ]
+}

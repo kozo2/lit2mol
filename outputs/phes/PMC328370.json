@@ -1,0 +1,73 @@
+{
+  "source": {
+    "pmcid": "PMC328370",
+    "title": "Sequence, structural and evolutionary relationships between class 2 aminoacyl-tRNA synthetases."
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheS",
+      "name": "phenylalanyl-tRNA synthetase alpha subunit",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pmcid": "PMC328370",
+          "section": "Abstract",
+          "quote": "The alpha 2 beta 2 tetrameric enzymes (for glycine and phenylalanine) show certain special features in common as well as some of the class 2b motifs."
+        }
+      ]
+    },
+    {
+      "id": "PheT",
+      "name": "phenylalanyl-tRNA synthetase beta subunit",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pmcid": "PMC328370",
+          "section": "Abstract",
+          "quote": "The alpha 2 beta 2 tetrameric enzymes (for glycine and phenylalanine) show certain special features in common as well as some of the class 2b motifs."
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "PheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pmcid": "PMC328370",
+          "section": "Abstract",
+          "quote": "The alpha 2 beta 2 tetrameric enzymes (for glycine and phenylalanine) show certain special features in common as well as some of the class 2b motifs."
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheS",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC328370",
+              "section": "Abstract",
+              "quote": "The alpha 2 beta 2 tetrameric enzymes (for glycine and phenylalanine) show certain special features in common as well as some of the class 2b motifs."
+            }
+          ]
+        },
+        {
+          "component_ref": "PheT",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC328370",
+              "section": "Abstract",
+              "quote": "The alpha 2 beta 2 tetrameric enzymes (for glycine and phenylalanine) show certain special features in common as well as some of the class 2b motifs."
+            }
+          ]
+        }
+      ],
+      "description": "alpha2beta2 tetrameric class 2 aminoacyl-tRNA synthetase"
+    }
+  ]
+}

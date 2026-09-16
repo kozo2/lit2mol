@@ -1,0 +1,49 @@
+{
+  "source": {
+    "pmcid": "PMC1765480",
+    "title": "Mechanism of tRNA-dependent editing in translational quality control"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheT_beta",
+      "name": "phenylalanyl-tRNA synthetase β subunit",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pmcid": "PMC1765480",
+          "section": "Abstract",
+          "quote": "the highly conserved residue βHis-265"
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "PheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [],
+      "evidence": [
+        {
+          "pmcid": "PMC1765480",
+          "section": "Abstract",
+          "quote": "phenylalanyl-tRNA synthetase was used to investigate different models for hydrolysis of the noncognate product Tyr-tRNAPhe"
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheT_beta",
+          "count": 1,
+          "evidence": [
+            {
+              "pmcid": "PMC1765480",
+              "section": "Abstract",
+              "quote": "the highly conserved residue βHis-265"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

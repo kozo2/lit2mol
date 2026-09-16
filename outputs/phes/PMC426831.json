@@ -1,0 +1,43 @@
+{
+  "source": {
+    "pmcid": "PMC426831",
+    "title": "Phenylalanyl-tRNA Synthetase and Isoleucyl-tRNAPhe: A Possible Verification Mechanism for Aminoacyl-tRNA",
+    "organism": "Escherichia coli"
+  },
+  "genes": [],
+  "monomers": [
+    {
+      "id": "PheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "PheRS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC426831",
+          "section": "Abstract",
+          "quote": "The misacylated product is shown here to be hydrolyzed by highly purified phenylalanyl-tRNA synthetase from E. coli, with release of isoleucine and active tRNAPhe."
+        }
+      ]
+    },
+    {
+      "id": "IleRS",
+      "name": "isoleucyl-tRNA synthetase",
+      "synonyms": [
+        "IleRS",
+        "EC 6.1.1.5"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC426831",
+          "section": "Abstract",
+          "quote": "The synthesis of isoleucyl-tRNAPhe (Escherichia coli) proceeds at an appreciable rate under normal in vitro conditions in the presence of isoleucyl-tRNA synthetase (EC 6.1.1.5) from E. coli."
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}

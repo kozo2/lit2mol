@@ -1,0 +1,120 @@
+{
+  "source": {
+    "pmcid": "PMC233002",
+    "title": "Genes for the alpha and beta subunits of the phenylalanyl-transfer ribonucleic acid synthetase of Escherichia coli.",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_pheS",
+      "name": "pheS",
+      "synonyms": [
+        "alpha subunit gene"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC233002",
+          "section": "Abstract",
+          "quote": "the genes for the alpha and beta subunits (designated pheS and heT, respectively) were mapped"
+        }
+      ]
+    },
+    {
+      "id": "gene_pheT",
+      "name": "pheT",
+      "synonyms": [
+        "heT",
+        "beta subunit gene"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC233002",
+          "section": "Abstract",
+          "quote": "The gene order, as determined by transduction is aroD-pps-pheT-pheS."
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_alpha",
+      "name": "phenylalanyl-tRNA synthetase alpha subunit",
+      "synonyms": [
+        "alpha subunit",
+        "alpha"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC233002",
+          "section": "Abstract",
+          "quote": "purified separated alpha or beta subunits of the wild-type enzyme"
+        }
+      ],
+      "gene_ref": "gene_pheS"
+    },
+    {
+      "id": "monomer_beta",
+      "name": "phenylalanyl-tRNA synthetase beta subunit",
+      "synonyms": [
+        "beta subunit",
+        "beta"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC233002",
+          "section": "Abstract",
+          "quote": "purified separated alpha or beta subunits of the wild-type enzyme"
+        }
+      ],
+      "gene_ref": "gene_pheT"
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "complex_pheRS",
+      "name": "phenylalanyl-tRNA synthetase",
+      "synonyms": [
+        "phenylalanyl-transfer ribonucleic acid synthetase",
+        "PheRS"
+      ],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC233002",
+          "section": "Abstract",
+          "quote": "The phenylalanyl-transfer ribonucleic acid synthetase of Escherichia coli is a tetramer that contains two different kinds of polypeptide chains."
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "monomer_alpha",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC233002",
+              "section": "Abstract",
+              "quote": "tetramer that contains two different kinds of polypeptide chains"
+            }
+          ]
+        },
+        {
+          "component_ref": "monomer_beta",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC233002",
+              "section": "Abstract",
+              "quote": "tetramer that contains two different kinds of polypeptide chains"
+            }
+          ]
+        }
+      ],
+      "description": "Tetrameric enzyme composed of two different kinds of polypeptide chains (alpha and beta subunits)."
+    }
+  ]
+}

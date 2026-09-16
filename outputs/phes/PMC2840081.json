@@ -1,0 +1,128 @@
+{
+  "source": {
+    "pmcid": "PMC2840081",
+    "title": "Cell-specific differences in the requirements for translation quality control"
+  },
+  "genes": [
+    {
+      "id": "pheS",
+      "name": "pheS",
+      "synonyms": [
+        "PheRS α-subunit",
+        "phenylalanyl-tRNA synthetase alpha subunit"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC2840081",
+          "section": "Abstract",
+          "quote": "the α-subunits contain the active site"
+        }
+      ]
+    },
+    {
+      "id": "pheT",
+      "name": "pheT",
+      "synonyms": [
+        "PheRS β-subunit",
+        "phenylalanyl-tRNA synthetase beta subunit"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC2840081",
+          "section": "Abstract",
+          "quote": "the β-subunits harbor the editing site"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "PheS",
+      "name": "PheS",
+      "synonyms": [
+        "PheRS α-subunit",
+        "phenylalanyl-tRNA synthetase alpha subunit"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC2840081",
+          "section": "Abstract",
+          "quote": "the α-subunits contain the active site"
+        }
+      ],
+      "gene_ref": "pheS"
+    },
+    {
+      "id": "PheT",
+      "name": "PheT",
+      "synonyms": [
+        "PheRS β-subunit",
+        "phenylalanyl-tRNA synthetase beta subunit"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC2840081",
+          "section": "Abstract",
+          "quote": "the β-subunits harbor the editing site"
+        }
+      ],
+      "gene_ref": "pheT"
+    },
+    {
+      "id": "mtPheRS",
+      "name": "mtPheRS",
+      "synonyms": [
+        "mitochondrial PheRS"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC2840081",
+          "section": "Abstract",
+          "quote": "mitochondrial PheRS (mtPheRS) is an α-subunit monomer"
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": [
+    {
+      "id": "ctPheRS",
+      "name": "ctPheRS",
+      "synonyms": [
+        "cytoplasmic PheRS",
+        "phenylalanyl-tRNA synthetase"
+      ],
+      "evidence": [
+        {
+          "pmcid": "PMC2840081",
+          "section": "Abstract",
+          "quote": "CtPheRS is similar to bacterial enzymes in that it consists of a heterotetramer in which the α-subunits contain the active site and the β-subunits harbor the editing site."
+        }
+      ],
+      "components": [
+        {
+          "component_ref": "PheS",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC2840081",
+              "section": "Abstract",
+              "quote": "the α-subunits contain the active site"
+            }
+          ]
+        },
+        {
+          "component_ref": "PheT",
+          "count": 2,
+          "evidence": [
+            {
+              "pmcid": "PMC2840081",
+              "section": "Abstract",
+              "quote": "the β-subunits harbor the editing site"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

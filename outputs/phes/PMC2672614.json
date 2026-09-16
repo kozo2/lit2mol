@@ -1,0 +1,55 @@
+{
+  "source": {
+    "pmcid": "PMC2672614",
+    "title": "Global Functional Atlas of Escherichia coli Encompassing Previously Uncharacterized Proteins",
+    "organism": "Escherichia coli"
+  },
+  "genes": [
+    {
+      "id": "gene_yjcF",
+      "name": "yjcF",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC2672614",
+          "section": "Results",
+          "quote": "YjcF, which has similarity to phenylalanyl-tRNA synthetase PheT of Bacteroides vulgatus, bound ribosomal release factor 2 and another orphan, YbeB"
+        }
+      ]
+    }
+  ],
+  "monomers": [
+    {
+      "id": "monomer_YjcF",
+      "name": "YjcF",
+      "synonyms": [],
+      "organism": "Escherichia coli",
+      "evidence": [
+        {
+          "pmcid": "PMC2672614",
+          "section": "Results",
+          "quote": "YjcF, which has similarity to phenylalanyl-tRNA synthetase PheT of Bacteroides vulgatus, bound ribosomal release factor 2 and another orphan, YbeB"
+        }
+      ],
+      "gene_ref": "gene_yjcF"
+    },
+    {
+      "id": "monomer_PheT_Bv",
+      "name": "phenylalanyl-tRNA synthetase PheT",
+      "synonyms": [
+        "PheT"
+      ],
+      "organism": "Bacteroides vulgatus",
+      "evidence": [
+        {
+          "pmcid": "PMC2672614",
+          "section": "Results",
+          "quote": "YjcF, which has similarity to phenylalanyl-tRNA synthetase PheT of Bacteroides vulgatus, bound ribosomal release factor 2 and another orphan, YbeB"
+        }
+      ]
+    }
+  ],
+  "modified_monomers": [],
+  "complexes": []
+}
