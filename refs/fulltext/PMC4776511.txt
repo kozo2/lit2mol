@@ -1,0 +1,4 @@
+Translation quality control is critical for bacterial responses to amino acid stress
+
+ABSTRACT
+Recent studies showing that both high-accuracy protein synthesis and low-accuracy protein synthesis are critical for cellular growth and survival under different growth conditions suggest that the translation quality-control machinery may function in cellular processes other than protein synthesis. We explored this possibility and found that inhibition of misacylated-tRNA quality control suppressed the synthesis of the starvation-inducible second messenger guanosine tetraphosphate and limited the induction of stringent response-dependent gene expression. These findings show that translation quality control is a single checkpoint for both accurate protein synthesis and transcriptional responses to stress.

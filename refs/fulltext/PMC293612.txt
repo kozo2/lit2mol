@@ -1,0 +1,4 @@
+Effects of an insertion mutation in a locus affecting pyridine nucleotide transhydrogenase (pnt::Tn5) on the growth of Escherichia coli.
+
+ABSTRACT
+The effects of a pnt::Tn5 insertion mutation on the growth of strains lacking phosphoglucoisomerase or glucose 6-phosphate dehydrogenase were examined. The results support the idea that the energy-linked transhydrogenase is an important source of reduced nicotinamide adenine dinucleotide phosphate for Escherichia coli under some conditions.

@@ -1,0 +1,4 @@
+Studies on energy-linked reactions. Energy-linked reduction of oxidized nicotinamide–adenine dinucleotide by succinate in Escherichia coli
+
+ABSTRACT
+1. A method for the preparation of small particles from Escherichia coli is described. 2. These particles catalyse the ATP-driven reduction of NAD+ by succinate. 3. ATP utilized/NADH produced ratios below 2.0 were measured and a stoicheiometry of 1 molecule of ATP utilized per molecule of NADH produced is proposed. 4. The reaction is not inhibited by 2,4-dinitrophenol or by oligomycin but is inhibited by other uncouplers such as pentabromophenol and dicoumarol. 5. The specificity of the energy source, the specificity of the electron acceptor, the effects of pH, Mg2+, Pi and temperature have been studied.

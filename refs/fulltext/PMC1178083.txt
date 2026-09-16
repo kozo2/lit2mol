@@ -1,0 +1,4 @@
+The energy-linked transhydrogenase reaction in respiratory mutants of Escherichia coli K 12
+
+ABSTRACT
+1. Energy-linked and non-energy-linked transhydrogenase activities were assayed in membrane preparations from normal Escherichia coli K 12 and from various mutant strains. 2. The energy-linked transhydrogenase, which uses ATP as energy source, was dependent for activity on the presence of a functional Mg2++Ca2+-stimulated adenosine triphosphatase. 3. Neither of the quinones formed by E. coli, namely ubiquinone-8 and menaquinone-8, was required for normal ATP-dependent energy-linked transhydrogenase activity. 4. The energy-linked transhydrogenase was inhibited by piericidin A at a site unrelated to the sites of inhibition of the electron-transport chain by piericidin A.

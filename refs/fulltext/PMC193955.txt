@@ -1,0 +1,4 @@
+Experimental Determination and System Level Analysis of Essential Genes in Escherichia coli MG1655
+
+ABSTRACT
+Defining the gene products that play an essential role in an organism's functional repertoire is vital to understanding the system level organization of living cells. We used a genetic footprinting technique for a genome-wide assessment of genes required for robust aerobic growth of Escherichia coli in rich media. We identified 620 genes as essential and 3,126 genes as dispensable for growth under these conditions. Functional context analysis of these data allows individual functional assignments to be refined. Evolutionary context analysis demonstrates a significant tendency of essential E. coli genes to be preserved throughout the bacterial kingdom. Projection of these data over metabolic subsystems reveals topologic modules with essential and evolutionarily preserved enzymes with reduced capacity for error tolerance.

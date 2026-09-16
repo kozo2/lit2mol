@@ -1,0 +1,4 @@
+Sequence of the Escherichia coli pheST operon and identification of the himA gene.
+
+ABSTRACT
+The complete nucleotide sequence of the Escherichia coli pheST operon coding for the two subunits of phenylalanyl-tRNA synthetase (an alpha 2 beta 2-type enzyme) has been determined. Another open reading frame (prp) was revealed downstream from pheT which was identified as himA, the gene for the alpha subunit of the integration host factor.

@@ -1,0 +1,4 @@
+Oxidation of phenylalanyl-tRNA synthetase positively regulates translational quality control
+
+ABSTRACT
+Regulation of translational quality control during adverse growth conditions is critical to maintain cellular homeostasis. Translational quality control is maintained by proofreading by the aminoacyl-tRNA synthetases (aaRS), which ensure that cognate aminoacyl-tRNAs are provided to the ribosome for protein synthesis. Our findings now show that under oxidative stress a global conformational change in the phenylalanyl-tRNA synthetase positively regulates quality control by increasing the rate of proofreading. These results demonstrate that the translational machinery is able to rapidly and positively respond to environmental challenges to maintain the accuracy of protein synthesis.

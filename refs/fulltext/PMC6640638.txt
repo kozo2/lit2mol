@@ -1,0 +1,6 @@
+In Vivo Biosynthesis of a β-Amino Acid-Containing Protein
+
+ABSTRACT
+It has recently been reported that ribosomes from erythromycin-resistant Escherichia coli strains, when isolated in S30 extracts and incubated with chemically mis-acylated tRNA, can incorporate certain β-amino acids into full length DHFR in vitro. Here we report that wild-type E. coli EF-Tu and phenylalanyl-tRNA synthetase collaborate with these mutant ribosomes and others to incorporate β3-Phe analogs into full length DHFR in vivo. E. coli harboring the most active mutant ribosomes are robust, with a doubling time only 14% longer than wild-type. These results reveal the unexpected tolerance of E. coli and its translation machinery to the β3-amino acid backbone and should embolden in vivo selections for orthogonal translational machinery components that incorporate diverse β-amino acids into proteins and peptides. E. coli harboring mutant ribosomes may possess the capacity to incorporate many non-natural, non-α-amino acids into proteins and other sequence-programmed polymeric materials.
+
+SUPPLEMENTARY MATERIAL

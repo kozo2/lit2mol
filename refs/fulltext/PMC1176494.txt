@@ -1,0 +1,4 @@
+Studies on energy-linked reactions. Energy-linked transhydrogenase reaction in Escherichia coli
+
+ABSTRACT
+1. Small particles from Escherichia coli catalyse an ATP-dependent reduction of NADP+ by NADH. 2. The reaction was stimulated by Mg2+ and only ATP and ITP could serve as energy donors. 3. Studies of the stoicheiometry of the reaction indicate that 1–2mol of ATP are utilized/mol of NADH produced. 4. The reaction is inhibited by uncoupling agents such as 2,4-dinitrophenol (200μm) and tetrachlorotrifluorobenzimidazole (2μm) but oligomycin does not inhibit. 5. The reaction is inhibited by relatively high concentrations (200μm) of piericidin A.

@@ -1,0 +1,7 @@
+The Role of a Novel Auxiliary Pocket in Bacterial Phenylalanyl-tRNA Synthetase Druggability
+
+ABSTRACT
+Background: Phenylalanyl-tRNA synthetase inhibitors have been shown to be efficacious in animal models of infection.
+Results: Inhibitors occupy a newly identified hydrophobic auxiliary binding pocket.
+Conclusion: Compound binding in this pocket leads to high screening hit rates, resistance frequencies, and elevated plasma protein binding.
+Significance: New inhibitors may be identified by avoiding the auxiliary pocket.

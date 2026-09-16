@@ -1,0 +1,4 @@
+Phenylalanyl-tRNA Synthetase and Isoleucyl-tRNAPhe: A Possible Verification Mechanism for Aminoacyl-tRNA
+
+ABSTRACT
+The synthesis of isoleucyl-tRNAPhe (Escherichia coli) proceeds at an appreciable rate under normal in vitro conditions in the presence of isoleucyl-tRNA synthetase (EC 6.1.1.5) from E. coli. The misacylated product is shown here to be hydrolyzed by highly purified phenylalanyl-tRNA synthetase from E. coli, with release of isoleucine and active tRNAPhe. Thus, phenylalanyl-tRNA synthetase possesses a previously unrecognized activity, which deacylates a mistakenly acylated tRNAPhe; the enzyme is inactive toward correctly matched aminoacyl tRNAs. Such a mechanism could serve to verify aminoacyl-tRNAs, deacylating those that are misacylated. Thus, a common generalization needs to be modified: an amino acid is not necessarily committed to a given (incorrect) anticodon when it is incorporated into aminoacyl-tRNA. It may be possible to correct it thereafter.
