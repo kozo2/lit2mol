@@ -1,0 +1,611 @@
+{
+  "$defs": {
+    "AminoAcid": {
+      "description": "Three-letter amino-acid codes.",
+      "enum": [
+        "Ala",
+        "Arg",
+        "Asn",
+        "Asp",
+        "Cys",
+        "Gln",
+        "Glu",
+        "Gly",
+        "His",
+        "Ile",
+        "Leu",
+        "Lys",
+        "Met",
+        "Phe",
+        "Pro",
+        "Ser",
+        "Thr",
+        "Trp",
+        "Tyr",
+        "Val",
+        "Sec",
+        "Pyl"
+      ],
+      "title": "AminoAcid",
+      "type": "string"
+    },
+    "Complex": {
+      "additionalProperties": false,
+      "description": "A molecular assembly with defined stoichiometry.",
+      "properties": {
+        "id": {
+          "description": "Local, document-unique identifier used for references.",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "description": "Primary name of the entity.",
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        },
+        "organism": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organism"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/$defs/ComponentStoichiometry"
+          },
+          "minItems": 1,
+          "title": "Components",
+          "type": "array"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "components"
+      ],
+      "title": "Complex",
+      "type": "object"
+    },
+    "ComponentStoichiometry": {
+      "additionalProperties": false,
+      "description": "A component of a complex together with its copy number.",
+      "properties": {
+        "component_ref": {
+          "description": "id of a Monomer, ModifiedMonomer, or nested Complex.",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$",
+          "title": "Component Ref",
+          "type": "string"
+        },
+        "count": {
+          "default": 1,
+          "description": "Number of copies in the complex.",
+          "exclusiveMinimum": 0,
+          "title": "Count",
+          "type": "integer"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "component_ref"
+      ],
+      "title": "ComponentStoichiometry",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "description": "Provenance for a single extracted statement.",
+      "properties": {
+        "pmcid": {
+          "anyOf": [
+            {
+              "pattern": "^PMC\\d+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pmcid"
+        },
+        "pmid": {
+          "anyOf": [
+            {
+              "pattern": "^\\d+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pmid"
+        },
+        "section": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Section or figure/table label.",
+          "title": "Section"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Supporting snippet from the source.",
+          "title": "Quote"
+        }
+      },
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Gene": {
+      "additionalProperties": false,
+      "description": "A gene that encodes a monomer.",
+      "properties": {
+        "id": {
+          "description": "Local, document-unique identifier used for references.",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "description": "Primary name of the entity.",
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        },
+        "organism": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organism"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "locus_tag": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "e.g. 'b3372'.",
+          "title": "Locus Tag"
+        },
+        "ncbi_gene_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ncbi Gene Id"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Gene",
+      "type": "object"
+    },
+    "Modification": {
+      "additionalProperties": false,
+      "description": "A chemical modification of a monomer.",
+      "properties": {
+        "modification_type": {
+          "$ref": "#/$defs/ModificationType"
+        },
+        "residue": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AminoAcid"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Residue bearing the modification."
+        },
+        "position": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Sequence position of the residue.",
+          "title": "Position"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Use for N-/C-terminal or otherwise un-numbered sites.",
+          "title": "Description"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "modification_type"
+      ],
+      "title": "Modification",
+      "type": "object"
+    },
+    "ModificationType": {
+      "description": "Controlled vocabulary of post-translational modifications.",
+      "enum": [
+        "phosphorylation",
+        "acetylation",
+        "methylation",
+        "adenylylation",
+        "uridylylation",
+        "glycosylation",
+        "hydroxylation",
+        "oxidation",
+        "nitrosylation",
+        "sumoylation",
+        "ubiquitination",
+        "palmitoylation",
+        "myristoylation",
+        "prenylation",
+        "carboxylation",
+        "proteolytic_cleavage",
+        "disulfide_bond",
+        "lactylation",
+        "succinylation",
+        "unknown",
+        "other"
+      ],
+      "title": "ModificationType",
+      "type": "string"
+    },
+    "ModifiedMonomer": {
+      "additionalProperties": false,
+      "description": "A monomer carrying one or more modifications.",
+      "properties": {
+        "id": {
+          "description": "Local, document-unique identifier used for references.",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "description": "Primary name of the entity.",
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        },
+        "organism": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organism"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "monomer_ref": {
+          "description": "id of the unmodified Monomer.",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$",
+          "title": "Monomer Ref",
+          "type": "string"
+        },
+        "modifications": {
+          "items": {
+            "$ref": "#/$defs/Modification"
+          },
+          "minItems": 1,
+          "title": "Modifications",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "monomer_ref",
+        "modifications"
+      ],
+      "title": "ModifiedMonomer",
+      "type": "object"
+    },
+    "Monomer": {
+      "additionalProperties": false,
+      "description": "A single polypeptide chain (gene product).",
+      "properties": {
+        "id": {
+          "description": "Local, document-unique identifier used for references.",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "description": "Primary name of the entity.",
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        },
+        "organism": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Organism"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "gene_ref": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Za-z_][A-Za-z0-9_.:-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "id of the encoding Gene.",
+          "title": "Gene Ref"
+        },
+        "uniprot_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uniprot Id"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "Monomer",
+      "type": "object"
+    },
+    "SourceDocument": {
+      "additionalProperties": false,
+      "description": "Bibliographic metadata of the document the entities were extracted from.",
+      "properties": {
+        "pmcid": {
+          "anyOf": [
+            {
+              "pattern": "^PMC\\d+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pmcid"
+        },
+        "pmid": {
+          "anyOf": [
+            {
+              "pattern": "^\\d+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pmid"
+        },
+        "doi": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doi"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "organism": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "e.g. 'Escherichia coli'.",
+          "title": "Organism"
+        }
+      },
+      "title": "SourceDocument",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Root extraction result: flat entity registries referencing each other by id.",
+  "properties": {
+    "source": {
+      "$ref": "#/$defs/SourceDocument"
+    },
+    "genes": {
+      "items": {
+        "$ref": "#/$defs/Gene"
+      },
+      "title": "Genes",
+      "type": "array"
+    },
+    "monomers": {
+      "items": {
+        "$ref": "#/$defs/Monomer"
+      },
+      "title": "Monomers",
+      "type": "array"
+    },
+    "modified_monomers": {
+      "items": {
+        "$ref": "#/$defs/ModifiedMonomer"
+      },
+      "title": "Modified Monomers",
+      "type": "array"
+    },
+    "complexes": {
+      "items": {
+        "$ref": "#/$defs/Complex"
+      },
+      "title": "Complexes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "source"
+  ],
+  "title": "MolecularMetadata",
+  "type": "object"
+}
