@@ -1,5 +1,8 @@
 """lit2mol: molecular metadata extraction using a remote vLLM server.
 
+Articles can be screened for protein complexes with TypeSafe first
+(``lit2mol.typesafe`` / ``python -m lit2mol.screen``).
+
 Public names are re-exported lazily so that running ``python -m lit2mol`` or
 ``python -m lit2mol.schema`` does not import modules twice.
 """
@@ -38,6 +41,20 @@ _EXPORTS = {
         "main",
         "run_batch",
         "source_for",
+    ],
+    "lit2mol.typesafe": [
+        "Article",
+        "ComplexScreen",
+        "ComplexScreener",
+        "ScreenError",
+        "ScreenEvidence",
+        "TypeSafeConfig",
+        "build_questions",
+        "chunk_paragraphs",
+        "load_article",
+    ],
+    "lit2mol.screen": [
+        "run_screen",
     ],
     "lit2mol.config": [
         "DEFAULT_CONFIG_FILENAME",

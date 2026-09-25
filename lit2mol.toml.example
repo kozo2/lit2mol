@@ -26,3 +26,17 @@ out_dir = "outputs/phes"
 pattern = "*.txt"
 # limit = 10
 concurrency = 8
+
+# Protein-complex screening (python -m lit2mol.screen); see docs/screening.md.
+# The API key is read from TYPESAFE_API_KEY; avoid committing it here.
+[typesafe]
+model = "jev-latest"
+# timeout = 120.0
+# max_chunk_chars = 80000
+
+[screen]
+paths = ["refs/fulltext"]
+focus = "phenylalanyl-tRNA synthetase (PheS/PheT)"
+out_dir = "outputs/screen/phes"
+pattern = "*.xml"
+concurrency = 8

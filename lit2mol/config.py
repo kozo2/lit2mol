@@ -18,6 +18,10 @@ The TOML file uses two tables::
     focus = "phenylalanyl-tRNA synthetase (PheS/PheT)"
     out_dir = "outputs/phes"
     concurrency = 8
+
+The protein-complex screen (``python -m lit2mol.screen``) reads the same
+run-level keys from a ``[screen]`` table and its connection settings from
+``[typesafe]``.
 """
 
 from __future__ import annotations
@@ -74,14 +78,23 @@ def discover_config(explicit: Optional[str]) -> Optional[Path]:
     return default.resolve() if default.is_file() else None
 
 
-def build_run_config(cli: dict[str, Any], toml_table: Optional[dict[str, Any]] = None) -> RunConfig:
-    """Merge CLI options, TOML values, and defaults into a :class:`RunConfig`."""
+def build_run_config(
+    cli: dict[str, Any],
+    toml_table: Optional[dict[str, Any]] = None,
+    table: str = "extraction",
+    defaults: Optional[dict[str, Any]] = None,
+) -> RunConfig:
+    """Merge CLI options, TOML values, and defaults into a :class:`RunConfig`.
+
+    ``table`` names the TOML table in error messages; ``defaults`` overrides
+    :data:`RUN_DEFAULTS` for commands with different defaults (e.g. screening).
+    """
     toml_table = dict(toml_table or {})
     unknown = set(toml_table) - set(RunConfig.model_fields)
     if unknown:
-        raise ValueError(f"unknown [extraction] keys: {sorted(unknown)}")
+        raise ValueError(f"unknown [{table}] keys: {sorted(unknown)}")
 
-    merged: dict[str, Any] = dict(RUN_DEFAULTS)
+    merged: dict[str, Any] = {**RUN_DEFAULTS, **(defaults or {})}
     merged.update(toml_table)
     for key, value in cli.items():
         if value is not None:

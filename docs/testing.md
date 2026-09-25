@@ -2,10 +2,12 @@
 
 The test suite validates the Pydantic models in `lit2mol/schema.py`, the remote
 vLLM client in `lit2mol/vllm.py`, the TOML configuration layer in
-`lit2mol/config.py`, and the extraction CLI in `lit2mol/extract.py`. The
-network-facing client is exercised with a mocked OpenAI client, so no GPU or
-vLLM server is required. This page lists the exact steps and expected output
-needed to reproduce a green run from a clean checkout.
+`lit2mol/config.py`, the extraction CLI in `lit2mol/extract.py`, and the
+TypeSafe protein-complex screen in `lit2mol/typesafe.py` / `lit2mol/screen.py`.
+The network-facing clients are exercised with mocked OpenAI and TypeSafe
+clients, so no GPU, vLLM server, or API key is required. This page lists the
+exact steps and expected output needed to reproduce a green run from a clean
+checkout.
 
 ## Recorded result
 
@@ -13,21 +15,22 @@ Run performed on a clean checkout at the repository root:
 
 ```
 $ .venv/bin/pytest -q
-........................................................................ [ 96%]
-...                                                                      [100%]
-75 passed in 0.14s
+........................................................................ [ 76%]
+......................                                                   [100%]
+94 passed in 0.30s
 ```
 
 | Item | Value |
 | --- | --- |
-| Tests collected | 75 |
-| Result | 75 passed, 0 failed, 0 skipped |
-| Python | 3.12.3 |
+| Tests collected | 94 |
+| Result | 94 passed, 0 failed, 0 skipped |
+| Python | 3.12.14 |
 | pytest | 9.1.1 |
 | pydantic | 2.13.5 |
 | pydantic-core | 2.46.5 |
-| openai | 3.14.1 |
-| OS | Linux x86_64 |
+| openai | 3.19.2 |
+| typesafe-sdk | 0.7.1 |
+| OS | macOS arm64 |
 
 ## Prerequisites
 
@@ -72,12 +75,12 @@ uv pip install --python .venv/bin/python \
   annotated-types==0.8.0 \
   anyio==4.15.1 \
   h11==0.16.0 \
-  httpcore2==2.13.0 \
-  httpx2==2.13.0 \
-  idna==3.19 \
+  httpcore2==2.13.1 \
+  httpx2==2.13.1 \
+  idna==3.20 \
   iniconfig==2.3.0 \
   jiter==0.17.0 \
-  openai==3.14.1 \
+  openai==3.19.2 \
   packaging==26.3 \
   pluggy==1.6.0 \
   pydantic==2.13.5 \
@@ -85,7 +88,9 @@ uv pip install --python .venv/bin/python \
   pygments==2.21.0 \
   pytest==9.1.1 \
   sniffio==1.3.1 \
+  tenacity==9.1.4 \
   truststore==0.10.4 \
+  typesafe-sdk==0.7.1 \
   typing-extensions==4.16.0 \
   typing-inspection==0.4.4
 ```
@@ -98,6 +103,7 @@ uv pip install --python .venv/bin/python \
 .venv/bin/pytest -q tests/test_vllm.py               # vLLM client
 .venv/bin/pytest -q tests/test_extract.py            # extraction CLI
 .venv/bin/pytest -q tests/test_config.py             # TOML config layer
+.venv/bin/pytest -q tests/test_screen.py             # TypeSafe screen
 .venv/bin/pytest -q -k "complex"                     # only complex tests
 .venv/bin/pytest -q -k "round_trip or json_schema"   # name-based selection
 .venv/bin/pytest -q -x                               # stop at first failure
@@ -132,6 +138,12 @@ including auto-discovery, CLI-over-TOML overrides, and invalid-key rejection.
 `tests/test_config.py` covers TOML loading, explicit and default discovery, and
 the `CLI > TOML > env > default` precedence for both `VLLMConfig` and
 `RunConfig`.
+
+`tests/test_screen.py` covers JATS XML and txt loading, paragraph chunking,
+question construction (with and without a focus), max-over-chunks aggregation
+and evidence selection, `TypeSafeConfig` precedence and API-key checks, custom
+`[screen]` defaults, concurrent `run_screen` output and error capture, and the
+screen CLI exit codes — all against a fake TypeSafe client.
 
 ## Troubleshooting
 
