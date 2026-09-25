@@ -37,9 +37,17 @@ out_dir = "outputs/phes"
 concurrency = 8
 ```
 
+To screen articles for protein complexes first (TypeSafe; needs
+`TYPESAFE_API_KEY`):
+
+```bash
+.venv/bin/python -m lit2mol.screen refs/fulltext   # -> outputs/screen/<id>.json
+```
+
 Documentation:
 - [docs/schema.md](docs/schema.md) — extraction target schema
   (gene → monomer → modified monomer, and complexes with stoichiometry)
 - [docs/extraction.md](docs/extraction.md) — LLM extraction via a remote vLLM server
+- [docs/screening.md](docs/screening.md) — protein-complex screening with TypeSafe
 - [docs/usage.md](docs/usage.md) — using the Python/Pydantic scripts
 - [docs/testing.md](docs/testing.md) — reproducing the test results
